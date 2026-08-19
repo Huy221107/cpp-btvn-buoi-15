@@ -6,11 +6,13 @@ int main(){
     cin>>n;
         while(n>0){
  c=n%10;
-n=n/10;
-a=a+1;
+
 if(c>max){
     max=c;
 }
+a++;
+n=n/10;
+
         }cout<<"Chu so: "<<a<<endl;
         cout<<"Chu so lon nhat la: "<<max<<endl;
     return 0;

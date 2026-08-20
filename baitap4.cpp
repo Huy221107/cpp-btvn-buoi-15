@@ -1,29 +1,24 @@
 #include <iostream>
 using namespace std;
-int main(){
-    const int n=81;
-    int doan;
-    int luot=7;
-do{
-    cout<<"Ban hay doan 1 so bat ky :";
-    cin>>doan;
-if(doan==n){
-    
-    cout<<"ban da doan dung "<< endl;
-}
-else {
-    cout<<"ban da doan sai"<<endl;
-}
-luot--;
-}while (doan!=81&&luot>0);
-if(luot==0){
-    cout<<"ban da het luot doan"<<endl;
-    cout<<"nguoi choi da thua"<<endl;
-    cout<<"so bi mat la: "<<n<<endl;}
-    else{
-        cout<<"nguoi choi da thang"<<endl;
-        cout<<"so bi mat la: "<<n<<endl;
+int main()
+{
+    int n, k, dem = 0, du = 0;
+    cout << "nhap vao so nguyen duong n:";
+    cin >> n;
+    cout << "nhap vao chu so k(0-9):";
+    cin >> k;
+    if (k >= 0 && k <= 9)
+    {
+        do
+        {
+            du = n % 10;
+            if (du == k)
+            {
+                dem++;
+            }
+            n = n / 10;
+        } while (n > 0);
     }
-
-
+    cout << "chu so k xuat hien trong n :" << dem << " lan " << endl;
+    return 0;
 }

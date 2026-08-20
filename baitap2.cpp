@@ -1,20 +1,31 @@
 #include <iostream>
 using namespace std;
-int main(){
-    int n,dao=0,n1;
-    cout<<"nhap vao so nguyen duong n:";
-    cin >>n;
-n1=n;
-    while(n>0){  
-dao=dao*10+n%10;
-n=n/10;
+int main()
+{
+    int tstart, tend, buocnhay, dem = 0, tFt = 0, tFs = 0;
+    cout << "nhiet do bat dau: ";
+    cin >> tstart;
+    cout << "nhiet do ket thuc :";
+    cin >> tend;
+    cout << "buoc nhay :";
+    cin >> buocnhay;
+    for (int i = tstart; i <= tend; i += buocnhay)
+    {
+        tFt = tstart * 1.8 + 32;
+        tFs = tend * 1.8 + 32;
+        dem++;
     }
-    cout<<" so n dau khi dao nguoc :"<<dao<<endl;
-    if(n1==dao){
-        cout<<n1<<" la so doi xung."<< endl;
+    if (dem == 1)
+    {
+        cout << "Dung " << dem << " dong" << endl;
+        cout << tstart << " do C = " << tFt << " do F" << endl;
+        cout << tend << " do C = " << tFs << " do F" << endl;
     }
-    else{
-        cout<<n1<<" khong phai la so doi xung"<<endl;
+    else
+    {
+        cout << dem << " dong" << endl;
+        cout << tstart << " do C = " << tFt << " do F" << endl;
+        cout << tend << " do C = " << tFs << " do F" << endl;
     }
-   return 0;
+    return 0;
 }

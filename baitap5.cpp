@@ -3,12 +3,13 @@
 using namespace std;
 int main()
 {
-    double n, s = 0;
+    double n, s = 0,dau = 1;
     cout << "nhap vao so nguyen duong n:";
     cin >> n;
-    for (double i = 1; i <= n; i += 2)
+    for (double i = 1; i <= n; i++)
     {
-        s += (1 / i - 1 / (i + 1));
+        s += dau * (1 / i );
+        dau = -dau;
     }
     cout << fixed << setprecision(4);
     cout << "tong :" << s;

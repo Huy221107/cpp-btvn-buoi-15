@@ -2,13 +2,23 @@
 using namespace std;
 int main()
 {
-    int n, tong = 0;
-    cout << "nhap so nguyen duong n: ";
+    const int X = 10;
+    int n, dem = 0;
+    cout << "nhap vao so nguyen duong :";
     cin >> n;
-    for (int i = 2; i <= n; i += 2)
+    int a[n];
+    for (int i = 0; i < n; i++)
     {
-        tong += i;
+        cout << "A[ " << i << " ]=";
+        cin >> a[i];
     }
-    cout << "tong cac so chan: " << tong << endl;
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] == X)
+        {
+            dem++;
+        }
+    }
+    cout << "so lan xuat hien cua x trong mnag :" << dem << endl;
     return 0;
 }

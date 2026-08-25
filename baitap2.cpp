@@ -2,30 +2,25 @@
 using namespace std;
 int main()
 {
-    int tstart, tend, buocnhay, dem = 0, tFt = 0, tFs = 0;
-    cout << "nhiet do bat dau: ";
-    cin >> tstart;
-    cout << "nhiet do ket thuc :";
-    cin >> tend;
-    cout << "buoc nhay :";
-    cin >> buocnhay;
-    for (int i = tstart; i <= tend; i += buocnhay)
+    int n, dem = 0;
+    cout << "nhap vao so nguyen duong :";
+    cin >> n;
+    int a[n];
+    cout<< "nhap vao cac phan tu cua mang :"<<endl;
+    for (int i = 0; i < n; i++)
     {
-        tFt = tstart * 1.8 + 32;
-        tFs = tend * 1.8 + 32;
-        dem++;
+        cout << " ";
+        cin >> a[i];
     }
-    if (dem == 1)
+    cout<< "mang goc :"<<endl;
+     for (int i = 0; i < n; i++)
     {
-        cout << "Dung " << dem << " dong" << endl;
-        cout << tstart << " do C = " << tFt << " do F" << endl;
-        cout << tend << " do C = " << tFs << " do F" << endl;
+        cout<< a[i]<<" ";
     }
-    else
-    {
-        cout << dem << " dong" << endl;
-        cout << tstart << " do C = " << tFt << " do F" << endl;
-        cout << tend << " do C = " << tFs << " do F" << endl;
+    cout<<endl;
+    cout<<"mang sau khi dao nguoc thu tu :"<<endl;
+    for(int i=n-1;i>-1;i--){
+       cout<< a[i]<<" ";
     }
     return 0;
 }

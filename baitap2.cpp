@@ -5,21 +5,27 @@ int main()
     int n, dem = 0;
     cout << "nhap vao so nguyen duong :";
     cin >> n;
-    int a[n];
+    int a[100];
     cout << "nhap vao cac phan tu cua mang :" << endl;
     for (int i = 0; i < n; i++)
     {
         cout << " ";
         cin >> a[i];
     }
-    cout << "mang goc :" << endl;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        cout << a[i] << " ";
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
     }
-    cout << endl;
-    cout << "mang sau khi dao nguoc thu tu :" << endl;
-    for (int i = n - 1; i > -1; i--)
+    cout << " mang sap xep giam dan :" << endl;
+    for (int i = 0; i < n; i++)
     {
         cout << a[i] << " ";
     }

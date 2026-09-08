@@ -1,67 +1,49 @@
 #include <iostream>
 using namespace std;
-bool laSoChan(int n)
+void nhap(int &n, int a[])
 {
-    if (n % 2 == 0)
+   
+    cout << "nhap vao mang a[n]: " << endl;
+    for (int i = 0; i < n; i++)
     {
-        return true;
-    }
-    return false;
-}
-bool laSoNguyenTo(int n)
-{
-    if (n <= 1)
-    {
-        return false;
-    }
-    for (int i = 1; i < n / 2; i++)
-    {
-        if (n % i == 0)
-        {
-            return false;
-        }
-        return true;
+        cout << "a[" << i + 1 << "]: ";
+        cin >> a[i];
     }
 }
-bool laNamNhuan(int nam)
+void themdau (int &n, int a[], int x)
 {
-    if (nam % 4 == 0 && nam % 100 != 0 || nam % 100 == 0)
+    n=n+1;
+    for(int i=n-1;i>0;i--)
     {
-        return true;
+        a[i]=a[i-1];
     }
-    return false;
+    a[0]=x;
+}
+void themcuoi(int &n, int a[], int x)
+{
+   n=n+1;
+   a[n-1]=x;
+}
+void xuat(int n, int a[])
+{
+    cout << "Cac phan tu trong mang la: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << " ";
+    }
 }
 
 int main()
 {
-    int n, nam;
-    cout << "Nhap vao n: ";
+int n,x;
+    cout << "nhap vao so phan tu cua mang: ";
     cin >> n;
-    cout << "Nhap vao 1 nam bat ki: ";
-    cin >> nam;
-    if (laSoChan(n))
-    {
-        cout << n << " la so chan" << endl;
-    }
-    else
-    {
-        cout << n << " khong phai la so chan" << endl;
-    }
-    if (laSoNguyenTo(n))
-    {
-        cout << n << " la so nguyen to" << endl;
-    }
-    else
-    {
-        cout << n << " khong phai la so nguyen to" << endl;
-    }
-    if (laNamNhuan(nam))
-    {
-        cout << nam << " la nam nhuan" << endl;
-    }
-    else
-    {
-        cout << nam << " khong phai la nam nhuan" << endl;
-    }
-    return 0;
+int a[n];
+cout<<"nhap so phan tu can them vao dau va cuoi mang: ";
+    cin>>x;
+    nhap(n, a);
+    themdau(n, a, x);
+    themcuoi(n, a, x);
+    xuat(n, a);
+    return 0;   
 }

@@ -1,26 +1,29 @@
 #include <iostream>
 using namespace std;
-float tinhDienTichHCN(float dai, float rong)
+void nhap(int &n, int a[])
 {
-    return dai * rong;
+  cout << "nhap vao mang a[n]: " << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cout << "a[" << i + 1 << "]: ";
+    cin >> a[i];
+  }
 }
-float tinhChuViHCN(float dai, float rong)
+void xuat(int n, int a[])
 {
-    return 2 * (dai + rong);
-}
-float tinhDienTichTronVoiBanKinh(float r, float PI = 3.14159)
-{
-    return PI * r * r;
-}
-float tinhChuViTron(float r, float PI = 3.14159)
-{
-    return PI * 2 * r;
+  cout << "Cac phan tu trong mang la: ";
+  for (int i = 0; i < n; i++)
+  {
+    cout << a[i] << " ";
+  }
 }
 int main()
 {
-    cout << "Dien tich hcn: " << tinhDienTichHCN(2, 3) << endl;
-    cout << "Chu vi hcn: " << tinhChuViHCN(2, 3) << endl;
-    cout << "Dien tich hinh tron: " << tinhDienTichTronVoiBanKinh(3) << endl;
-    cout << "Chu vi hinh tron: " << tinhChuViTron(3) << endl;
-    return 0;
+  int n;
+  cout << "Nhap n: ";
+  cin >> n;
+  int a[n];
+  nhap(n, a);
+  xuat(n, a);
+  return 0;
 }
